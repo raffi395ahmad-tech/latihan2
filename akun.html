@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Raffi</title>
+
+    <style>
+        *,
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            min-height: 100vh;
+            background-color: #333333;
+            padding: 20px;
+            gap: 15px;
+        }
+
+        img {
+            width: 90px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+        }
+
+        .h-1 {
+            color: #f7f7ff;
+            text-transform: capitalize;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .keterangan {
+            color: #f7f7ff;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .h-2 {
+            color: black;
+            text-transform: capitalize;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .cita-cita {
+            font-weight: bold;
+            text-transform: capitalize;
+            text-align: center;
+            padding: 0 15px;
+        }
+
+        .tentang-saya,
+        .skils,
+        .projek,
+        .no {
+            margin-top: 10px;
+            width: 100%;
+            max-width: 420px;
+            background-color: #f7f7ff;
+            border-radius: 20px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skil {
+            text-transform: uppercase;
+            color: black;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .box-2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .projek-1 {
+            color: #f7f7ff;
+            background-color: black;
+            width: 80%;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 6px;
+            border-radius: 5px;
+        }
+
+        button {
+            border: none;
+            width: 120px;
+            height: 40px;
+            background-color: #00bcd4;
+            text-transform: uppercase;
+            border-radius: 5px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            align-self: center;
+        }
+
+        .box2 {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: tomato;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+
+        a {
+            font-size: 30px;
+            color: #F5F7FA;
+            text-decoration: none;
+            margin: 20px;
+            text-transform: uppercase;
+        }
+
+        a:hover {
+            transition-delay: 3s ease-in-out;
+            transition: 2s;
+            color: black;
+            background-color: white;
+            border-radius: 5px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            a {
+                font-size: 20px;
+                margin: 8px;
+            }
+
+            button {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box2" id="box-2">
+        <a href="index.html">home</a>
+        <a href="akun.html">akun</a>
+        <a href="galeri.html">galeri</a>
+    </div>
+    <div class="container">
+
+        <img src="y.jpeg" alt="Sasuke Uchiha">
+
+        <h1 class="h-1" id="nama">nama kamu</h1>
+        <p class="keterangan">web Developer | pelajar | programmer</p>
+
+        <div class="tentang-saya">
+            <h1 class="h-2">tentang saya</h1>
+            <h5></h5>
+            <p class="cita-cita">
+                saya adalah seorang siswa yang tertarik dengan html css dan js
+                saya ingin jadi fullstack web developer
+            </p>
+        </div>
+
+        <div class="skils">
+            <h1 class="h-2">skill</h1>
+            <h5></h5>
+            <div class="box">
+                <div class="skil">html</div>
+                <div class="skil">css</div>
+                <div class="skil">js</div>
+            </div>
+        </div>
+
+        <div class="projek">
+            <h1 class="h-2">projek</h1>
+            <h5></h5>
+            <div class="box-2">
+                <div class="projek-1">login</div>
+                <div class="projek-1">galeri</div>
+                <div class="projek-1">profile</div>
+            </div>
+        </div>
+
+        <div class="no">
+            <h1 class="h-2">kontak</h1>
+            <h5></h5>
+            <p class="cita-cita">08234674632847</p>
+            <p class="cita-cita">raffi395@gmail.com</p>
+            <button onclick="klik()">ganti nama</button>
+        </div>
+    </div>
+
+    <script>
+        let nama = document.getElementById("nama");
+
+        function klik() {
+            let x = prompt("Isi nama kamu:");
+            if (x && x.trim() !== "") {
+                nama.innerHTML = x;
+            } else {
+                alert("Nama tidak boleh kosong!");
+            }
+        }
+    </script>
+</body>
+
+</html>

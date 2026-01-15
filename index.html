@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TemanKu</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        *,
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* LOGIN */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            gap: 30px;
+            background-color: #F5F7FA;
+            padding: 10px;
+        }
+
+        .login-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            background-color: white;
+            width: 500px;
+            max-width: 100%;
+            border-radius: 30px;
+            padding: 20px;
+        }
+
+        .login-title {
+            color: blueviolet;
+            text-transform: uppercase;
+        }
+
+        .input-username,
+        .input-password {
+            padding: 10px;
+            width: 300px;
+            max-width: 100%;
+        }
+
+        .btn-login {
+            padding: 10px;
+            width: 150px;
+            background-color: lightblue;
+            border: none;
+            text-transform: uppercase;
+        }
+
+        /* NAVBAR */
+        .navbar-menu {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: tomato;
+            flex-wrap: wrap;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .navbar-link {
+            font-size: 30px;
+            color: #F5F7FA;
+            text-decoration: none;
+            margin: 20px;
+            text-transform: uppercase;
+        }
+
+        .navbar-link:hover {
+            transition: 0.3s ease-in-out;
+            color: black;
+            background-color: white;
+            border-radius: 5px;
+        }
+
+        /* HOME */
+        .home-section {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        .home-card {
+            width: 40%;
+            height: 30%;
+            background-color: #F5F7FA;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 30px;
+        }
+
+        .home-title {
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+        .home-desc {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .login-card {
+                width: 90%;
+            }
+
+            .navbar-link {
+                font-size: 20px;
+                margin: 8px;
+            }
+
+            .home-card {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar-menu" id="box-2">
+        <a href="index.html" class="navbar-link">home</a>
+        <a href="akun.html" class="navbar-link">akun</a>
+        <a href="galeri.html" class="navbar-link">galeri</a>
+    </div>
+
+    <!-- HOME -->
+    <div class="home-section" id="home">
+        <div class="home-card">
+            <h1 class="home-title">selamat datang di temankuu</h1>
+            <p class="home-desc">ini project terbaru saya di 2026 silahkan cek</p>
+        </div>
+    </div>
+
+    <!-- LOGIN -->
+    <div class="login-container" id="cn">
+        <div class="login-card">
+            <h1 class="login-title">temanku</h1>
+            <input type="text" placeholder="username" class="input-username" id="name">
+            <input type="password" placeholder="password" class="input-password" id="password">
+            <button class="btn-login" onclick="login()">login</button>
+        </div>
+    </div>
+
+    <script>
+        let name = document.getElementById("name")
+        let password = document.getElementById("password")
+        let cn = document.getElementById("cn")
+        let box2 = document.getElementById("box-2")
+        let home = document.getElementById("home")
+
+        box2.style.display = "none"
+        home.style.display = "none"
+
+        function login() {
+            if (name.value === "gerald" && password.value === "123") {
+                box2.style.display = "block"
+                cn.style.display = "none"
+                home.style.display = "flex"
+            } else {
+                alert("kata sandi salah")
+            }
+        }
+    </script>
+
+</body>
+</html>
