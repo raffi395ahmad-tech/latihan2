@@ -7,67 +7,96 @@
     <title>Profile Raffi</title>
 
     <style>
-        *,
-        html,
-        body {
+        /* RESET */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
 
-        .container {
+        body {
+            background-color: #333;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            background-color: tomato;
+            padding: 10px;
+        }
+
+        .navbar a {
+            font-size: 24px;
+            color: #f5f7fa;
+            text-decoration: none;
+            margin: 10px 15px;
+            text-transform: uppercase;
+        }
+
+        .navbar a:hover {
+            transition: 0.3s ease-in-out;
+            color: black;
+            background-color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* MAIN CONTAINER */
+        .main-container {
             display: flex;
             align-items: center;
             flex-direction: column;
             width: 100%;
             min-height: 100vh;
-            background-color: #333333;
             padding: 20px;
             gap: 15px;
         }
 
-        img {
+        /* PROFILE IMAGE */
+        .profile-img {
             width: 90px;
-            max-width: 100%;
-            height: auto;
+            height: 90px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid white;
         }
 
-        .h-1 {
+        /* TEXT */
+        .title-main {
             color: #f7f7ff;
             text-transform: capitalize;
             font-weight: bold;
             text-align: center;
         }
 
-        .keterangan {
+        .subtitle {
             color: #f7f7ff;
             font-size: 14px;
             font-weight: bold;
             text-align: center;
         }
 
-        .h-2 {
+        .section-title {
             color: black;
             text-transform: capitalize;
             font-weight: bold;
             text-align: center;
         }
 
-        .cita-cita {
+        .section-text {
             font-weight: bold;
             text-transform: capitalize;
             text-align: center;
             padding: 0 15px;
         }
 
-        .tentang-saya,
-        .skils,
-        .projek,
-        .no {
+        /* CARD */
+        .card {
             margin-top: 10px;
             width: 100%;
             max-width: 420px;
@@ -79,21 +108,22 @@
             gap: 15px;
         }
 
-        .box {
+        /* SKILLS */
+        .skills-box {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 10px;
         }
 
-        .skil {
+        .skill-item {
             text-transform: uppercase;
-            color: black;
             font-weight: bold;
             font-size: 16px;
         }
 
-        .box-2 {
+        /* PROJECT */
+        .project-list {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -101,7 +131,7 @@
             gap: 10px;
         }
 
-        .projek-1 {
+        .project-item {
             color: #f7f7ff;
             background-color: black;
             width: 80%;
@@ -112,6 +142,7 @@
             border-radius: 5px;
         }
 
+        /* BUTTON */
         button {
             border: none;
             width: 120px;
@@ -125,99 +156,76 @@
             align-self: center;
         }
 
-        .box2 {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background-color: tomato;
-            flex-wrap: wrap;
-            padding: 10px;
-        }
-
-        a {
-            font-size: 30px;
-            color: #F5F7FA;
-            text-decoration: none;
-            margin: 20px;
-            text-transform: uppercase;
-        }
-
-        a:hover {
-            transition-delay: 3s ease-in-out;
-            transition: 2s;
-            color: black;
-            background-color: white;
-            border-radius: 5px;
+        button:hover {
+            background-color: #0097a7;
         }
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
-           
-            .box2{
-                flex-direction:column;
-            a {
-                font-size: 20px;
+            .navbar {
+                flex-direction: column;
+            }
+
+            .navbar a {
+                font-size: 18px;
                 margin: 8px;
             }
 
             button {
-                width: 90%;
+                width: 100%;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="box2" id="box-2">
+
+    <div class="navbar" id="box-2">
         <a href="index.html">home</a>
         <a href="akun.html">akun</a>
         <a href="galeri.html">galeri</a>
     </div>
-    <div class="container">
 
-        <img src="y.jpeg" alt="Sasuke Uchiha">
+    <div class="main-container">
 
-        <h1 class="h-1" id="nama">nama kamu</h1>
-        <p class="keterangan">web Developer | pelajar | programmer</p>
+        <img src="y.jpeg" alt="Sasuke Uchiha" class="profile-img">
 
-        <div class="tentang-saya">
-            <h1 class="h-2">tentang saya</h1>
-            <h5></h5>
-            <p class="cita-cita">
+        <h1 class="title-main" id="nama">nama kamu</h1>
+        <p class="subtitle">web Developer | pelajar | programmer</p>
+
+        <div class="card">
+            <h1 class="section-title">tentang saya</h1>
+            <p class="section-text">
                 saya adalah seorang siswa yang tertarik dengan html css dan js
                 saya ingin jadi fullstack web developer
             </p>
         </div>
 
-        <div class="skils">
-            <h1 class="h-2">skill</h1>
-            <h5></h5>
-            <div class="box">
-                <div class="skil">html</div>
-                <div class="skil">css</div>
-                <div class="skil">js</div>
+        <div class="card">
+            <h1 class="section-title">skill</h1>
+            <div class="skills-box">
+                <div class="skill-item">html</div>
+                <div class="skill-item">css</div>
+                <div class="skill-item">js</div>
             </div>
         </div>
 
-        <div class="projek">
-            <h1 class="h-2">projek</h1>
-            <h5></h5>
-            <div class="box-2">
-                <div class="projek-1">login</div>
-                <div class="projek-1">galeri</div>
-                <div class="projek-1">profile</div>
+        <div class="card">
+            <h1 class="section-title">projek</h1>
+            <div class="project-list">
+                <div class="project-item">login</div>
+                <div class="project-item">galeri</div>
+                <div class="project-item">profile</div>
             </div>
         </div>
 
-        <div class="no">
-            <h1 class="h-2">kontak</h1>
-            <h5></h5>
-            <p class="cita-cita">08234674632847</p>
-            <p class="cita-cita">raffi395@gmail.com</p>
+        <div class="card">
+            <h1 class="section-title">kontak</h1>
+            <p class="section-text">08234674632847</p>
+            <p class="section-text">raffi395@gmail.com</p>
             <button onclick="klik()">ganti nama</button>
         </div>
+
     </div>
 
     <script>
@@ -225,14 +233,13 @@
 
         function klik() {
             let x = prompt("Isi nama kamu:");
-            if (x && x.trim() !== "") {
-                nama.innerHTML = x;
+            if (x) {
+                nama.textContent = x;
             } else {
                 alert("Nama tidak boleh kosong!");
             }
         }
     </script>
+
 </body>
-
 </html>
-
